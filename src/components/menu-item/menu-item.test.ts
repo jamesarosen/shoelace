@@ -171,7 +171,7 @@ describe('<sl-menu-item>', () => {
     await menu.updateComplete;
     await sendKeys({ press: 'ArrowRight' });
 
-    outerItem.addEventListener('focus', focusHandler);
+    outerItem!.addEventListener('focus', focusHandler);
     await menu.updateComplete;
     await sendKeys({ press: 'ArrowLeft' });
     await menu.updateComplete;

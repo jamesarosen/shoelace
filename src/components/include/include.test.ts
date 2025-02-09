@@ -11,6 +11,7 @@ const stubbedFetchResponse: Response = {
   statusText: 'OK',
   type: 'default',
   url: '',
+  bytes: () => Promise.resolve(new Uint8Array()),
   json: () => Promise.resolve({}),
   text: () => Promise.resolve(''),
   blob: sinon.fake(),

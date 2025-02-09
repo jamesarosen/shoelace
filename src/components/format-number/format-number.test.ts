@@ -34,7 +34,8 @@ describe('<sl-format-number>', () => {
   });
 
   describe('type property', () => {
-    ['currency', 'decimal', 'percent'].forEach(type => {
+    const types: Intl.NumberFormatOptions['style'][] = ['decimal', 'percent', 'currency'];
+    types.forEach(type => {
       it(`number has correct type format: ${type}`, async () => {
         const el = await fixture<SlFormatNumber>(html`
           <sl-format-number value="1000" type="${type}"></sl-format-number>
@@ -72,7 +73,8 @@ describe('<sl-format-number>', () => {
   });
 
   describe('currencyDisplay property', () => {
-    ['symbol', 'narrowSymbol', 'code', 'name'].forEach(currencyDisplay => {
+    const displays: Intl.NumberFormatOptions['currencyDisplay'][] = ['symbol', 'narrowSymbol', 'code', 'name'];
+    displays.forEach(currencyDisplay => {
       it(`number has correct type format: ${currencyDisplay}`, async () => {
         const el = await fixture<SlFormatNumber>(html`
           <sl-format-number value="1000" currency-display="${currencyDisplay}"></sl-format-number>
